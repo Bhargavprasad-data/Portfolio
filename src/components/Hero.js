@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import { motion } from 'framer-motion';
 import { FiGithub, FiLinkedin, FiMail, FiDownload, FiArrowDown } from 'react-icons/fi';
 import { profileData } from '../data/profileData';
@@ -31,6 +31,56 @@ const Hero = () => {
 
   const currentPhoto = candidatePhotos[photoIdx];
 
+  // Typewriter setup
+  const phrases = useMemo(() => [
+    'Full Stack Developer',
+    'I build modern websites',
+    'I develop mobile apps',
+    'Tailored to your needs',
+    'At budget-friendly rates'
+  ], []);
+
+  const [typedText, setTypedText] = useState('');
+  const [isDeleting, setIsDeleting] = useState(false);
+  const [phraseIndex, setPhraseIndex] = useState(0);
+  const [charIndex, setCharIndex] = useState(0);
+
+  useEffect(() => {
+    const currentPhrase = phrases[phraseIndex];
+    const typingSpeed = 70; // ms per char when typing
+    const deletingSpeed = 40; // ms per char when deleting
+    const endPause = 1100; // pause at end of word
+    const startPause = 300; // small pause before typing starts
+
+    let timeoutId;
+
+    if (!isDeleting && charIndex === 0 && typedText.length === 0) {
+      timeoutId = setTimeout(() => {
+        setTypedText(currentPhrase.slice(0, 1));
+        setCharIndex(1);
+      }, startPause);
+    } else if (!isDeleting && charIndex < currentPhrase.length) {
+      timeoutId = setTimeout(() => {
+        setTypedText(currentPhrase.slice(0, charIndex + 1));
+        setCharIndex(charIndex + 1);
+      }, typingSpeed);
+    } else if (!isDeleting && charIndex === currentPhrase.length) {
+      timeoutId = setTimeout(() => {
+        setIsDeleting(true);
+      }, endPause);
+    } else if (isDeleting && charIndex > 0) {
+      timeoutId = setTimeout(() => {
+        setTypedText(currentPhrase.slice(0, charIndex - 1));
+        setCharIndex(charIndex - 1);
+      }, deletingSpeed);
+    } else if (isDeleting && charIndex === 0) {
+      setIsDeleting(false);
+      setPhraseIndex((phraseIndex + 1) % phrases.length);
+    }
+
+    return () => clearTimeout(timeoutId);
+  }, [phrases, phraseIndex, charIndex, isDeleting, typedText]);
+
   return (
     <section id="home" className="min-h-screen flex items-center justify-center section-padding pt-20">
       <div className="container-custom">
@@ -52,8 +102,9 @@ const Hero = () => {
                 Hi, I'm{' '}
                 <span className="gradient-text">{profileData.name}</span>
               </h1>
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-gray-700 dark:text-gray-300">
-                {profileData.role}
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-gray-700 dark:text-gray-300 h-8 sm:h-10 flex items-center">
+                <span>{typedText}</span>
+                <span className="ml-1 inline-block w-0.5 h-5 sm:h-6 bg-gray-700 dark:bg-gray-300 animate-pulse" />
               </h2>
               <p className="text-xl text-gray-600 dark:text-gray-400 max-w-lg">
                 {profileData.summary}
