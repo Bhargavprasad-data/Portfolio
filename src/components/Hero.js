@@ -37,7 +37,7 @@ const Hero = () => {
     'I build modern websites',
     'I develop mobile apps',
     'Tailored to your needs',
-    'At budget-friendly rates'
+    'At budget-friendly building'
   ], []);
 
   const [typedText, setTypedText] = useState('');
