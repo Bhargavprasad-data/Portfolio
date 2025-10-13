@@ -168,8 +168,8 @@ const Skills = () => {
               { name: "Linux", icon: "🐧" }, 
               { name:"Vercel",  icon:"▲"},
               { name : "Problem Solving" , icon: "📝"},
-              { name : "GIT" , icon: "🟧📂"},
-              { name : "GITHUB" , icon: "🐱‍💻"},
+              { name : "GIT" , icon: "🟧"},
+              { name : "GITHUB" , icon: "😺"},
             ].map((tech, index) => (
               <motion.div
                 key={tech.name}
