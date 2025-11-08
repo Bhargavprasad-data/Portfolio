@@ -129,12 +129,12 @@ const Footer = () => {
               © {currentYear}Bhargavprasad. All rights reserved.
             </p>
             <div className="flex items-center space-x-6 text-sm text-gray-400">
-              <a href="#" className="hover:text-white transition-colors duration-200">
+              <button className="hover:text-white transition-colors duration-200">
                 Privacy Policy
-              </a>
-              <a href="#" className="hover:text-white transition-colors duration-200">
+              </button>
+              <button className="hover:text-white transition-colors duration-200">
                 Terms of Service
-              </a>
+              </button>
               <span>Made with ❤️ using React & Tailwind CSS</span>
             </div>
           </div>

@@ -1,0 +1,4 @@
+# This directory is for dynamically imported certificate images
+# Place your certificate images here (png, jpg, jpeg, webp, gif, svg)
+# Images placed here will be automatically loaded by the Certificates component
+

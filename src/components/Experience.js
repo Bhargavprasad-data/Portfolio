@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { FiBriefcase, FiCalendar, FiMapPin, FiAward, FiUpload, FiFile, FiDownload, FiTrash2 } from 'react-icons/fi';
+import { FiBriefcase, FiMapPin, FiAward } from 'react-icons/fi';
 import { experienceData, educationData } from '../data/projectsData';
 
 const Experience = () => {
@@ -9,9 +9,6 @@ const Experience = () => {
     triggerOnce: true,
     threshold: 0.1,
   });
-
-  const [certifications, setCertifications] = useState([]);
-  const [uploading, setUploading] = useState(false);
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -32,50 +29,6 @@ const Experience = () => {
         duration: 0.6,
       },
     },
-  };
-
-  const handleFileUpload = (event) => {
-    const files = Array.from(event.target.files);
-    setUploading(true);
-
-    // Simulate file processing
-    setTimeout(() => {
-      const newCertifications = files.map((file, index) => ({
-        id: Date.now() + index,
-        name: file.name,
-        type: file.type,
-        size: file.size,
-        uploadDate: new Date().toLocaleDateString(),
-        file: file
-      }));
-
-      setCertifications(prev => [...prev, ...newCertifications]);
-      setUploading(false);
-      event.target.value = ''; // Reset input
-    }, 1000);
-  };
-
-  const removeCertification = (id) => {
-    setCertifications(prev => prev.filter(cert => cert.id !== id));
-  };
-
-  const downloadCertification = (certification) => {
-    const url = URL.createObjectURL(certification.file);
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = certification.name;
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-    URL.revokeObjectURL(url);
-  };
-
-  const formatFileSize = (bytes) => {
-    if (bytes === 0) return '0 Bytes';
-    const k = 1024;
-    const sizes = ['Bytes', 'KB', 'MB', 'GB'];
-    const i = Math.floor(Math.log(bytes) / Math.log(k));
-    return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
   };
 
   return (

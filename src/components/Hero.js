@@ -1,6 +1,6 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import { motion } from 'framer-motion';
-import { FiGithub, FiLinkedin, FiMail, FiDownload, FiArrowDown } from 'react-icons/fi';
+import { FiGithub, FiLinkedin, FiMail, FiArrowDown } from 'react-icons/fi';
 import { profileData } from '../data/profileData';
 
 const Hero = () => {
@@ -25,7 +25,7 @@ const Hero = () => {
       base + 'me.png'
     ].filter(Boolean);
     return Array.from(new Set(candidates));
-  }, [profileData.photo]);
+  }, []);
 
   const [photoIdx, setPhotoIdx] = useState(0);
 
