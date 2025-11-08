@@ -163,10 +163,13 @@ const Skills = () => {
               { name: "C", icon: "📦" },
               { name: "AWS", icon: "☁️" },
               { name: "Firebase", icon: "🔥" },
-              { name: "PostgreSQL", icon: "🐘" },
-              { name: "Redis", icon: "⚡" },
+              { name: "MongoDB", icon: "🌱" },
               { name: "React.js", icon: "🌐" },
-              { name: "Linux", icon: "🐧" }
+              { name: "Linux", icon: "🐧" }, 
+              { name:"Vercel",  icon:"▲"},
+              { name : "Problem Solving" , icon: "📝"},
+              { name : "GIT" , icon: "🟧"},
+              { name : "GITHUB" , icon: "😺"},
             ].map((tech, index) => (
               <motion.div
                 key={tech.name}
