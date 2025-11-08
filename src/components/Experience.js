@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { FiBriefcase, FiCalendar, FiMapPin, FiAward, FiUpload, FiFile, FiDownload, FiTrash2 } from 'react-icons/fi';
+import { FiBriefcase, FiCalendar, FiMapPin, FiAward, FiUpload, FiFile, FiTrash2 } from 'react-icons/fi';
 import { experienceData, educationData } from '../data/projectsData';
 
 const Experience = () => {
