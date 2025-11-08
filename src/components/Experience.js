@@ -253,7 +253,7 @@ const Experience = () => {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
               {[
                 { label: "Online Courses", value: "10+", icon: "📚" },
-                { label: "Projects Built", value: "20+", icon: "🚀" },
+                { label: "Projects Built", value: "18+", icon: "🚀" },
                 { label: "Technologies", value: "10+", icon: "⚡" },
                 { label: "Years Experience", value: "2+", icon: "⏰" }
               ].map((stat, index) => (
