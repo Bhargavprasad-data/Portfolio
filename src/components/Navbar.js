@@ -89,7 +89,7 @@ const Navbar = () => {
               </motion.a>
               <motion.a
                 whileHover={{ scale: 1.1, y: -2 }}
-                href="https://www.linkedin.com/in/bhargavprasad-vana-1b49b62bb/"
+                href="https://www.linkedin.com/in/bhargavprasad-vana-57352b399/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-200"
@@ -154,7 +154,7 @@ const Navbar = () => {
                 <FiGithub size={20} />
               </a>
               <a
-                href="https://www.linkedin.com/in/bhargavprasad-vana-1b49b62bb/"
+                href="https://www.linkedin.com/in/bhargavprasad-vana-57352b399/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-200"
