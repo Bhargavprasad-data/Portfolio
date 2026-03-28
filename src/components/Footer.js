@@ -19,7 +19,7 @@ const Footer = () => {
     {
       icon: FiLinkedin,
       name: 'LinkedIn',
-      url: 'https://www.linkedin.com/in/bhargavprasad-vana-1b49b62bb/',
+      url: 'https://www.linkedin.com/in/bhargavprasad-vana-57352b399/',
       color: 'hover:text-blue-600',
     },
     {
