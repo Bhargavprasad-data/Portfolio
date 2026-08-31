@@ -1,6 +1,7 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import { motion } from 'framer-motion';
-import { FiGithub, FiLinkedin, FiMail, FiArrowDown } from 'react-icons/fi';
+import { FiGithub, FiLinkedin, FiMail, FiArrowDown, FiDownload } from 'react-icons/fi';
+import { SiLeetcode } from 'react-icons/si';
 import { profileData } from '../data/profileData';
 
 const Hero = () => {
@@ -126,7 +127,7 @@ const Hero = () => {
               >
                 Get In Touch
               </motion.button>
-              {/* <motion.a
+              <motion.a
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="btn-secondary"
@@ -136,7 +137,7 @@ const Hero = () => {
               >
                 <FiDownload className="inline mr-2" />
                 Download CV
-              </motion.a> */}
+              </motion.a>
             </motion.div>
 
             {/* Social Links */}
@@ -163,6 +164,15 @@ const Hero = () => {
                 className="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-200"
               >
                 <FiLinkedin size={24} />
+              </motion.a>
+              <motion.a
+                whileHover={{ scale: 1.1, y: -2 }}
+                href={profileData.leetcode}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-200"
+              >
+                <SiLeetcode size={24} />
               </motion.a>
               <motion.a
                 whileHover={{ scale: 1.1, y: -2 }}

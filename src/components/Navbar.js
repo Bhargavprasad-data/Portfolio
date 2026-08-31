@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { FiMenu, FiX, FiSun, FiMoon, FiGithub, FiLinkedin, FiMail } from 'react-icons/fi';
+import { SiLeetcode } from 'react-icons/si';
+import { profileData } from '../data/profileData';
 import { useTheme } from '../context/ThemeContext';
 
 const Navbar = () => {
@@ -17,7 +19,7 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  
+
 
   const navItems = [
     { name: 'Home', href: '#home' },
@@ -41,21 +43,21 @@ const Navbar = () => {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? 'bg-white/80 dark:bg-dark-900/80 backdrop-blur-md shadow-lg'
-          : 'bg-transparent'
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled
+        ? 'bg-white/80 dark:bg-dark-900/80 backdrop-blur-md shadow-lg'
+        : 'bg-transparent'
+        }`}
     >
       <div className="container-custom">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <motion.div
             whileHover={{ scale: 1.05 }}
-            className="text-2xl font-bold gradient-text cursor-pointer"
+            className="text-2xl font-bold cursor-pointer flex items-center gap-2"
             onClick={() => scrollToSection('#home')}
           >
-            #SkillUp
+            <span className="text-blue-600 dark:text-blue-400 font-mono">{"</>"}</span>
+            <span className="gradient-text">CodeNav</span>
           </motion.div>
 
           {/* Desktop Navigation */}
@@ -80,7 +82,7 @@ const Navbar = () => {
             <div className="hidden sm:flex items-center space-x-3">
               <motion.a
                 whileHover={{ scale: 1.1, y: -2 }}
-                href="https://github.com/Bhargavprasad-data"
+                href={profileData.github}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-200"
@@ -89,7 +91,7 @@ const Navbar = () => {
               </motion.a>
               <motion.a
                 whileHover={{ scale: 1.1, y: -2 }}
-                href="https://www.linkedin.com/in/bhargavprasad-vana-1b49b62bb/"
+                href={profileData.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-200"
@@ -98,7 +100,16 @@ const Navbar = () => {
               </motion.a>
               <motion.a
                 whileHover={{ scale: 1.1, y: -2 }}
-                href="mailto:bhargavvana80@gmail.com"
+                href={profileData.leetcode}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-200"
+              >
+                <SiLeetcode size={20} />
+              </motion.a>
+              <motion.a
+                whileHover={{ scale: 1.1, y: -2 }}
+                href={`mailto:${profileData.email}`}
                 className="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-200"
               >
                 <FiMail size={20} />
@@ -146,7 +157,7 @@ const Navbar = () => {
             {/* Mobile Social Links */}
             <div className="flex items-center justify-center space-x-4 pt-4 border-t border-gray-200 dark:border-dark-700">
               <a
-                href="https://github.com/Bhargavprasad-data"
+                href={profileData.github}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-200"
@@ -154,7 +165,7 @@ const Navbar = () => {
                 <FiGithub size={20} />
               </a>
               <a
-                href="https://www.linkedin.com/in/bhargavprasad-vana-1b49b62bb/"
+                href={profileData.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-200"
@@ -162,7 +173,15 @@ const Navbar = () => {
                 <FiLinkedin size={20} />
               </a>
               <a
-                href="mailto:bhargavvana80@gmail.com"
+                href={profileData.leetcode}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-200"
+              >
+                <SiLeetcode size={20} />
+              </a>
+              <a
+                href={`mailto:${profileData.email}`}
                 className="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-200"
               >
                 <FiMail size={20} />

@@ -1,6 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FiGithub, FiLinkedin, FiTwitter, FiMail, FiArrowUp } from 'react-icons/fi';
+import { FiGithub, FiLinkedin, FiMail, FiArrowUp } from 'react-icons/fi';
+import { SiLeetcode } from 'react-icons/si';
+import { profileData } from '../data/profileData';
 
 const Footer = () => {
   const scrollToTop = () => {
@@ -13,25 +15,25 @@ const Footer = () => {
     {
       icon: FiGithub,
       name: 'GitHub',
-      url: 'https://github.com/Bhargavprasad-data',
+      url: profileData.github,
       color: 'hover:text-gray-900 dark:hover:text-white',
     },
     {
       icon: FiLinkedin,
       name: 'LinkedIn',
-      url: 'https://www.linkedin.com/in/bhargavprasad-vana-1b49b62bb/',
+      url: profileData.linkedin,
       color: 'hover:text-blue-600',
     },
     {
-      icon: FiTwitter,
-      name: 'Twitter',
-      url: 'https://twitter.com/yourusername',
-      color: 'hover:text-blue-400',
+      icon: SiLeetcode,
+      name: 'LeetCode',
+      url: profileData.leetcode,
+      color: 'hover:text-yellow-500',
     },
     {
       icon: FiMail,
       name: 'Email',
-      url: 'mailto:your.email@example.com',
+      url: `mailto:${profileData.email}`,
       color: 'hover:text-red-500',
     },
   ];
