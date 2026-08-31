@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { FiMail, FiPhone, FiMapPin, FiGithub, FiLinkedin, FiTwitter, FiSend } from 'react-icons/fi';
+import { FiMail, FiPhone, FiMapPin, FiGithub, FiLinkedin, FiSend } from 'react-icons/fi';
+import { SiLeetcode } from 'react-icons/si';
+import { profileData } from '../data/profileData';
 
 const Contact = () => {
   const [ref, inView] = useInView({
@@ -108,8 +110,8 @@ const Contact = () => {
     {
       icon: FiMail,
       title: 'Email',
-      value: 'bhargavvana80@gmail.com',
-      link: 'mailto:bhargavvana80@gmail.com',
+      value: profileData.email,
+      link: `mailto:${profileData.email}`,
     },
     {
       icon: FiPhone,
@@ -129,20 +131,20 @@ const Contact = () => {
     {
       icon: FiGithub,
       name: 'GitHub',
-      url: 'https://github.com/Bhargavprasad-data',
+      url: profileData.github,
       color: 'hover:text-gray-900 dark:hover:text-white',
     },
     {
       icon: FiLinkedin,
       name: 'LinkedIn',
-      url: 'https://www.linkedin.com/in/bhargavprasad-vana-57352b399/',
+      url: profileData.linkedin,
       color: 'hover:text-blue-600',
     },
     {
-      icon: FiTwitter,
-      name: 'Twitter',
-      url: 'https://twitter.com/yourusername',
-      color: 'hover:text-blue-400',
+      icon: SiLeetcode,
+      name: 'LeetCode',
+      url: profileData.leetcode,
+      color: 'hover:text-yellow-500',
     },
   ];
 

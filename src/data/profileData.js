@@ -4,7 +4,7 @@ export const profileData = {
   summary:
     "Building scalable web applications with the MERN Stack. Passionate about creating elegant solutions and exceptional user experiences.",
   github: "https://github.com/Bhargavprasad-data",
-  linkedin: "https://www.linkedin.com/in/bhargavprasad-vana-57352b399/",
+  linkedin: "https://www.linkedin.com/in/vana-bhargav-prasad-57352b399/",
   leetcode: "https://leetcode.com/u/Bhargavprasad_vana/",
   email: "bhargavvana80@gmail.com",
   photo:
