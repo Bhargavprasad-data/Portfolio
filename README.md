@@ -4,14 +4,14 @@ A modern, responsive personal portfolio website built with React.js and Tailwind
 
 ## ✨ Features
 
-- **Modern Design**: Clean, professional layout with smooth animations
-- **Responsive**: Mobile-first design that works on all devices
-- **Dark/Light Theme**: Toggle between dark and light modes
-- **Dynamic Projects**: Easy to add/update projects via data file
-- **Smooth Scrolling**: Navigation with smooth scroll to sections
-- **Contact Form**: Functional contact form with validation
-- **SEO Optimized**: Meta tags and structured data for better SEO
-- **Performance**: Optimized with lazy loading and efficient animations
+- **Modern Design**: Clean, professional layout with smooth animations.
+- **Responsive**: Mobile-first design that works on all devices.
+- **Dark/Light Theme**: Toggle between dark and light modes.
+- **Dynamic Projects**: Easy to add/update projects via data file.
+- **Smooth Scrolling**: Navigation with smooth scroll to sections.
+- **Contact Form**: Functional contact form with validation.
+- **SEO Optimized**: Meta tags and structured data for better SEO.
+- **Performance**: Optimized with lazy loading and efficient animations.
 
 ## 🚀 Tech Stack
 
