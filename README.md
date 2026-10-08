@@ -9,9 +9,9 @@ A modern, responsive personal portfolio website built with React.js and Tailwind
 - **Dark/Light Theme**: Toggle between dark and light modes.
 - **Dynamic Projects**: Easy to add/update projects via data file.
 - **Smooth Scrolling**: Navigation with smooth scroll to sections.
-- **Contact Form**: Functional contact form with validation
+- **Contact Form**: Functional contact form with validation.
 - **SEO Optimized**: Meta tags and structured data for better SEO.
-- **Performance**: Optimized with lazy loading and efficient animations
+- **Performance**: Optimized with lazy loading and efficient animations.
 
 ## 🚀 Tech Stack
 
